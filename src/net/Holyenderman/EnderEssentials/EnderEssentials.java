@@ -26,6 +26,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 package net.Holyenderman.EnderEssentials;
 
 import net.Holyenderman.EnderEssentials.Commands.CommandRageQuit;
+import net.Holyenderman.EnderEssentials.Commands.CommandSlap;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -40,8 +41,10 @@ public class EnderEssentials extends JavaPlugin
 	
 	public void onEnable()
 	{
+		this.getServer().getPluginManager().registerEvents(new CommandSlap(), this);
 		getCommand("ragequit").setExecutor(new CommandRageQuit());
 		getCommand("rq").setExecutor(new CommandRageQuit());
+		getCommand("slap").setExecutor(new CommandSlap());
 	}
 	
 	 public static JavaPlugin getInstance() 

@@ -10,3 +10,6 @@ commands:
    rq:
       description: Ragequit from the server
       usage: /rq [reason]
+   slap:
+      description: Slap a player
+      usage: /slap [target]

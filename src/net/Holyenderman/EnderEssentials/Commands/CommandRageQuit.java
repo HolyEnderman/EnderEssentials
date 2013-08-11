@@ -11,8 +11,6 @@ import org.bukkit.entity.Player;
 
 public class CommandRageQuit extends EnderEssentials implements CommandExecutor {
 	
-	public void CommandRagequit(EnderEssentials plugin){
-    }
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		if ((cmd.getName().equalsIgnoreCase("ragequit") || cmd.getName().equalsIgnoreCase("rq"))){
 			if (args.length >= 1)
