@@ -1,0 +1,15 @@
+name: EnderEssentials
+version: 1.0
+description: Essentials and stoof
+author: HolyEnderman
+main: net.Holyenderman.EnderEssentials.EnderEssentials
+commands:
+   ragequit:
+      description: Ragequit from the server
+      usage: /ragequit [reason]
+   rq:
+      description: Ragequit from the server
+      usage: /rq [reason]
+   slap:
+      description: Slap a player
+      usage: /slap [target]

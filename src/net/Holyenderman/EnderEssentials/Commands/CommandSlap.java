@@ -28,14 +28,9 @@ public class CommandSlap extends EnderEssentials implements CommandExecutor, Lis
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		if (cmd.getName().equalsIgnoreCase("slap")) {
-			if (args[0] == null)
-			{
-				sender.sendMessage(ChatColor.RED + "Enter a player name!" + ChatColor.RESET);
-			}
+		   try { 
 				Player targetplayer = Bukkit.getServer().getPlayer(args[0]);
-				if (targetplayer.isOnline())
-				{
-					if (targetplayer.getName() == sender.getName())
+			    if (targetplayer.getName() == sender.getName())
 					{
 						sender.sendMessage(ChatColor.RED + "You can't slap yourself... What's wrong with you?!?" + ChatColor.RESET);
 						return true;
@@ -44,12 +39,11 @@ public class CommandSlap extends EnderEssentials implements CommandExecutor, Lis
 				String target = targetplayer.getName();
 				Bukkit.broadcastMessage(ChatColor.GRAY + target + ChatColor.RED + " was slapped sky high by " + ChatColor.GRAY + sender.getName() + ChatColor.RESET);
 				isSlapped = true;
-				}
-				else
-				{
-					sender.sendMessage(ChatColor.RED + "That player is not online.");
-				}
-			return true;
+			return true; }
+		   
+			catch (NullPointerException e) {
+				sender.sendMessage(ChatColor.RED + "Either they're not here, or non-exsistant!" + ChatColor.RESET);
+			}
 		} 
 		return false; 
 	}
